@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+
+/* resources/css/app.css */
+@font-face {
+    font-family: 'vazir';
+    src: url('/resources/assets/fonts/vazir/vazir.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vazir';
+    src: url('/resources/assets/fonts/vazir/vazir.eot') format('eot');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vazir';
+    src: url('/resources/assets/fonts/vazir/vazir.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'vazir', sans-serif;
+}
+
+@import '../../vendor/livewire/flux/dist/flux.css';
+@custom-variant dark (&:where(.dark, .dark *));
+
+[dir="rtl"] .flux-dropdown {
+    text-align: right;
+}
+
+[dir="rtl"] .flux-popover {
+    left: auto;
+    right: 0;
+}
