@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Menu;
+namespace Modules\UI\Http\Livewire\Menu;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class SideBar extends Component
 {
     public function render()
     {
-        return view('livewire.menu.side-bar');
+        return view('ui::livewire.menu.side-bar');
     }
 }

@@ -28,13 +28,14 @@ body {
 }
 
 @import '../../vendor/livewire/flux/dist/flux.css';
-@custom-variant dark (&:where(.dark, .dark *));
 
-[dir="rtl"] .flux-dropdown {
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* [dir="rtl"] .flux-dropdown {
     text-align: right;
 }
 
 [dir="rtl"] .flux-popover {
     left: auto;
     right: 0;
-}
+} */

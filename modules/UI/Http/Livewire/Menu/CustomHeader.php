@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Menu;
+namespace Modules\UI\Http\Livewire\Menu;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class CustomHeader extends Component
 {
     public function render()
     {
-        return view('livewire.menu.custom-header');
+        return view('ui::livewire.menu.custom-header');
     }
 }
