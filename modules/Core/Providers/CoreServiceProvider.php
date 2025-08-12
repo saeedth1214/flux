@@ -3,25 +3,36 @@
 namespace Modules\Core\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Auth\Providers\ModuleServiceProvider as AuthModuleServiceProvider;
-use Modules\UI\Providers\ModuleServiceProvider as UIModuleServiceProvider;
 
 class CoreServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
-        $this->resolveAuthModuleProvider();
-        $this->resolveUIModuleProvider();
+        $this->resolveModules();
     }
 
-    private function resolveAuthModuleProvider()
+    private function resolveModules()
     {
-        $this->app->register(AuthModuleServiceProvider::class);
-    }
+        $modulesFile = base_path('modules.json');
 
-    private function resolveUIModuleProvider()
-    {
-        $this->app->register(UIModuleServiceProvider::class);
+        if (!file_exists($modulesFile)) {
+            return;
+        }
+
+        $modules = json_decode(file_get_contents($modulesFile), true);
+
+        foreach ($modules as $moduleName => $config) {
+            if (!empty($config['enabled'])) {
+                $providerClass = "Modules\\{$moduleName}\\Providers\\{$moduleName}ModuleServiceProvider";
+                $routeProviderClass = "Modules\\{$moduleName}\\Providers\\{$moduleName}RoutesServiceProvider";
+
+                if (class_exists($providerClass)) {
+                    $this->app->register($providerClass);
+                }
+                if (class_exists($routeProviderClass)) {
+                    $this->app->register($routeProviderClass);
+                }
+            }
+        }
     }
 }
