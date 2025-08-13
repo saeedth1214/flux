@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create(UserFields::_TABLE, function (Blueprint $table) {
             $table->id();
-            $table->string(UserFields::_NAME);
-            $table->string(UserFields::_EMAIL)->unique();
+            $table->string(UserFields::_FIRST_NAME);
+            $table->string(UserFields::_LAST_NAME);
+            $table->string(UserFields::_MOBILE)->unique();
+            $table->string(UserFields::_EMAIL)->unique()->nullable();
             $table->timestamp(UserFields::_EMAIL_VERIFIED_AT)->nullable();
-            $table->string(UserFields::_PASSWORD);
+            $table->timestamp(UserFields::_MOBILE_VERIFIED_AT)->nullable();
+            $table->string(UserFields::_PASSWORD)->nullable();
             $table->tinyInteger(UserFields::_ROLE)->default(1);
             $table->rememberToken();
             $table->timestamps();

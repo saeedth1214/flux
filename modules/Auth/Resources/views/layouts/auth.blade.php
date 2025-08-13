@@ -8,8 +8,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
 </head>
-<body>
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
     {{$slot}}
+</div>
     @fluxScripts
 </body>
 </html>
