@@ -7,7 +7,7 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+        
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800" dir="rtl">
