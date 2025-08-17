@@ -1,7 +1,7 @@
 {
-    "Base": true,
     "Core": true,
+    "Base": true,
     "Security": true,
     "Support": true,
-    "Theme": true
+    "User": true
 }

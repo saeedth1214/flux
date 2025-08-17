@@ -24,7 +24,6 @@ class ModuleServiceProvider extends BaseServiceProvider
     private function initModules(): void
     {
         $modules = $this->app['modules']->allEnabled();
-        dd($modules);
 
         foreach ($modules as $module)
         {
