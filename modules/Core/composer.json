@@ -1,0 +1,21 @@
+{
+    "name": "saeedth1214/core-module",
+    "description": "Core module by Saeed Soltani",
+    "authors": [
+        {
+            "name": "Saeed Soltani",
+            "email": "m.h.soltani1214@gmail.com"
+        }
+    ],
+    "require": {
+        "morilog/jalali": "^v3.4",
+        "predis/predis": "^v2.2",
+        "prettus/l5-repository": "^2.9",
+        "league/flysystem-aws-s3-v3": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Core\\": ""
+        }
+    }
+}

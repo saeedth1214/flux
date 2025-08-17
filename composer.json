@@ -11,8 +11,6 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "livewire/flux": "^2.2",
-        "livewire/livewire": "^3.0",
         "nwidart/laravel-modules": "^11",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
@@ -30,11 +28,6 @@
             "App\\": "app/",
             "Modules\\": "modules/",
             "Themes\\": "themes/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -62,10 +55,6 @@
             "dont-discover": []
         },
         "merge-plugin": {
-            "include": [
-                "composer.local.json",
-                "extensions/*/composer.json"
-            ],
             "require": [
                 "modules/*/composer.json"
             ],
@@ -73,8 +62,8 @@
             "replace": false,
             "ignore-duplicates": false,
             "merge-dev": true,
-            "merge-extra": false,
-            "merge-extra-deep": false,
+            "merge-extra": true,
+            "merge-extra-deep": true,
             "merge-replace": true,
             "merge-scripts": false
         }
