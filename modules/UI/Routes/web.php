@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use Modules\UI\Http\Livewire\Menu\Dashboard;
 use Modules\UI\Http\Livewire\Menu\FirstPage;
 use Modules\UI\Http\Livewire\Menu\SecondPage;

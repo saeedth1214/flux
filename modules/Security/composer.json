@@ -1,0 +1,26 @@
+{
+    "name": "mrsolivan/security-module",
+    "description": "Security module by saeed soltani",
+    "authors": [
+        {
+            "name": "saeed soltani",
+            "email": "mrsolivan@gmail.com"
+        }
+    ],
+    "require": {
+        "spatie/laravel-permission": "^6.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Security\\": ""
+        }
+    }
+}

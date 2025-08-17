@@ -1,0 +1,15 @@
+{
+    "name": "mrsolivan/support-module",
+    "description": "Support module by saeed soltani",
+    "authors": [
+        {
+            "name": "saeed soltani",
+            "email": "mrsolivan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Support\\": ""
+        }
+    }
+}

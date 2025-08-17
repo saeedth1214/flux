@@ -1,0 +1,15 @@
+{
+    "name": "mrsolivan/base-module",
+    "description": "Base module by saeed soltani",
+    "authors": [
+        {
+            "name": "saeed soltani",
+            "email": "mrsolivan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Base\\": ""
+        }
+    }
+}
