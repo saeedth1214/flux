@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 import tailwindcss from '@tailwindcss/vite'
+import path from 'path'
 
 export default defineConfig({
     base: "/FluxOne",
@@ -28,8 +29,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': '/resources/js',
-            '@flux': path.resolve(__dirname, '../../../vendor/livewire/flux/dist')
+            '@': path.resolve(__dirname, 'themes/FluxOne/resources/js'),
+            // '@flux': path.resolve(__dirname, '../../../../vendor/livewire/flux/dist')
         }
     },
     server: {
@@ -38,3 +39,7 @@ export default defineConfig({
         }
     }
 });
+
+
+// console.log(__dirname);
+
