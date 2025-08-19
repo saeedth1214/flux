@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 
+@import '../../../../vendor/livewire/flux/dist/flux.css';
+/* @import '@flux/flux.css'; */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* resources/css/app.css */
 @font-face {
     font-family: 'vazir';
@@ -26,16 +31,3 @@
 body {
     font-family: 'vazir', sans-serif;
 }
-
-@import '../../vendor/livewire/flux/dist/flux.css';
-
-/* @custom-variant dark (&:where(.dark, .dark *)); */
-
-/* [dir="rtl"] .flux-dropdown {
-    text-align: right;
-}
-
-[dir="rtl"] .flux-popover {
-    left: auto;
-    right: 0;
-} */

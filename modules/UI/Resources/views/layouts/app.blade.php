@@ -7,11 +7,16 @@
 
     <title>{{ $title ?? 'Page Title' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-        
+        @fluxAppearance
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800" dir="rtl">
     <div class="flex h-screen">
+        {{
+            <?php
+               dd(350);
+            ?>
+        }}
         <livewire:menu.side-bar />
         <flux:main>
             {{ $slot }}

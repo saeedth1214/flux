@@ -1,0 +1,24 @@
+{
+    "name": "saeedth1214/theme-module",
+    "description": "Theme module by Saeed Soltani.",
+    "authors": [
+        {
+            "name": "Saeed Soltani",
+            "email": "m.h.soltani1214@gmail.com"
+        }
+    ],
+    "require": {
+        "qirolab/laravel-themer": "^2.0.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Theme\\": ""
+        }
+    }
+}
