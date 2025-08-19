@@ -4,5 +4,7 @@
     "Security": true,
     "Support": true,
     "User": true,
-    "Theme": true
+    "Theme": true,
+    "Dashboard": true,
+    "Auth" :true
 }

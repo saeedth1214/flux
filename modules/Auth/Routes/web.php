@@ -1,9 +1,10 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
-use Modules\Auth\Http\Livewire\Login;
-use Modules\Auth\Http\Livewire\Register;
+use Themes\FluxOne\Livewire\Modules\Auth\Login;
+use Themes\FluxOne\Livewire\Modules\Auth\Register;
 
-Route::get('/auth/login', Login::class);
-Route::get('/auth/register', Register::class);
+Route::prefix('auth/')->group(function ($route) {
+    $route->get('login', Login::class);
+    $route->get('register', Register::class);
+});

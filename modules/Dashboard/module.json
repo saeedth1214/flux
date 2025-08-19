@@ -1,0 +1,16 @@
+{
+    "id": "Dashboard",
+    "title": "Dashboard Module",
+    "version": 0.1,
+    "name": "Dashboard",
+    "alias": "dashboard",
+    "description": "Dashboard module by saeed soltani",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
+    ],
+    "files": [
+        "Helpers/helpers.php"
+    ]
+}

@@ -15,6 +15,7 @@
         "laravel/tinker": "^2.9",
         "livewire/flux": "^2.2",
         "livewire/livewire": "^3.6",
+        "mhmiton/laravel-modules-livewire": "^5.2",
         "nwidart/laravel-modules": "^11",
         "wikimedia/composer-merge-plugin": "^2.1"
     },

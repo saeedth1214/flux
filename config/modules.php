@@ -142,7 +142,7 @@ return [
             'seeder'          => ['path' => 'Database/Seeders', 'generate' => true],
             'factory'         => ['path' => 'Database/factories', 'generate' => false],
             'model'           => ['path' => 'Entities', 'generate' => false],
-            'routes'          => ['path' => 'Routes', 'generate' => false],
+            'routes'          => ['path' => 'Routes', 'generate' => true],
             'controller'      => ['path' => 'Http/Controllers', 'generate' => false],
             'filter'          => ['path' => 'Http/Middleware', 'generate' => false],
             'request'         => ['path' => 'Http/Requests', 'generate' => false],

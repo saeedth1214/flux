@@ -1,0 +1,16 @@
+{
+    "id": "Auth",
+    "title": "Auth Module",
+    "version": 0.1,
+    "name": "Auth",
+    "alias": "auth",
+    "description": "Auth module by saeed soltani",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Auth\\Providers\\AuthServiceProvider"
+    ],
+    "files": [
+        "Helpers/helpers.php"
+    ]
+}

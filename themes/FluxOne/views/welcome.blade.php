@@ -23,7 +23,10 @@
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
         <flux:navbar class="-mb-px max-lg:hidden">
             <flux:navbar.item icon="home" href="/dashboard">داشبورد</flux:navbar.item>
+            <flux:navbar.item icon="home" href="/first-page">صفحه اول</flux:navbar.item>
+            <flux:navbar.item icon="home" href="/second-page">صفحه دوم</flux:navbar.item>
             <flux:navbar.item icon="inbox" href="/auth/login">ورود</flux:navbar.item>
+            <flux:navbar.item icon="inbox" href="/auth/register">ثبت نام</flux:navbar.item>
             <flux:navbar.item icon="document-text" href="#">خروج</flux:navbar.item>
         </flux:navbar>
 
