@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(
+        [
+            'resources/css/app.css', 
+            'resources/js/app.js'
+        ],
+            'FluxOne'
+            )
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    <!-- Styles -->
-    <style>
-
-    </style>
-
-
+    @fluxAppearance
 </head>
 
 <body class="min-h-screen bg-white dark:bg-zinc-800" dir="rtl">
@@ -46,7 +44,6 @@
             <flux:navbar.item icon="document-text" href="#">خروج</flux:navbar.item>
         </flux:navlist>
     </flux:sidebar>
-
     @fluxScripts
 </body>
 

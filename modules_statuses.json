@@ -3,5 +3,6 @@
     "Base": true,
     "Security": true,
     "Support": true,
-    "User": true
+    "User": true,
+    "Theme": true
 }
