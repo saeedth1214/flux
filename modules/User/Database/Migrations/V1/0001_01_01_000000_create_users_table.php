@@ -3,6 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Modules\Support\Enums\V1\Entities\Entities;
+use Modules\User\Entities\V1\User\UserFields;
+use Modules\User\Enums\V1\Role;
 
 return new class extends Migration
 {
@@ -11,13 +14,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create(Entities::User->table(), function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string(UserFields::FIRTSNAME);
+            $table->string(UserFields::LASTNAME);
+            $table->string(UserFields::EMAIL)->unique();
+            $table->string(UserFields::MOBILE)->unique();
+            $table->timestamp(UserFields::EMAIL_VERIFIED_AT)->nullable();
+            $table->timestamp(UserFields::MOBILE_VERIFIED_AT)->nullable();
+            $table->string(UserFields::PASSWORD);
+            $table->tinyInteger(UserFields::ROLE)->default(Role::Admin->value(0));
             $table->timestamps();
         });
 

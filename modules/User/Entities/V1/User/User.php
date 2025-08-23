@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Base\Entities\V1\BaseAuthenticatableModel;
 use Modules\User\Database\Factories\V1\UserFactory\UserFactory;
-use Modules\User\Enums\V1\AccountStatus\AccountStatus;
-use Modules\User\Enums\V1\AccountType\AccountType;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends BaseAuthenticatableModel
@@ -33,25 +31,14 @@ class User extends BaseAuthenticatableModel
      * @var array<int, string>
      */
     protected $fillable = [
-        #UserFields::ID,
         UserFields::MOBILE,
         UserFields::EMAIL,
-        UserFields::USERNAME,
+        UserFields::FIRTSNAME,
+        UserFields::LASTNAME,
         UserFields::PASSWORD,
-        #UserFields::PASSWORD_CONFIRMATION,
-        #UserFields::CURRENT_PASSWORD,
-        UserFields::MESSAGE,
-        UserFields::ACCOUNT_TYPE,
-        UserFields::ACCOUNT_STATUS,
-        UserFields::LIMITATION_END_DATE,
         UserFields::MOBILE_VERIFIED_AT,
         UserFields::EMAIL_VERIFIED_AT,
-        UserFields::FIRST_LOGIN_AT,
-        UserFields::FIRST_LOGIN_IP,
-        UserFields::LAST_LOGIN_AT,
-        UserFields::LAST_LOGIN_IP,
-        UserFields::REMEMBER_TOKEN,
-        #UserFields::ACCESS_TOKEN,
+        UserFields::ROLE,
         UserFields::CREATED_AT,
         UserFields::UPDATED_AT,
     ];
@@ -63,7 +50,6 @@ class User extends BaseAuthenticatableModel
      */
     protected $hidden = [
         UserFields::PASSWORD,
-        UserFields::REMEMBER_TOKEN,
     ];
 
     /**
@@ -72,8 +58,6 @@ class User extends BaseAuthenticatableModel
      * @var array<string, string>
      */
     protected $casts = [
-        UserFields::ACCOUNT_TYPE   => AccountType::class,
-        UserFields::ACCOUNT_STATUS => AccountStatus::class,
     ];
 
     /**
