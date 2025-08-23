@@ -18,11 +18,11 @@ class UserTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $this
-            ->system()
-            ->sudo()
-            ->manager()
-        ;
+        // $this
+        //     ->system()
+        //     ->sudo()
+        //     ->manager()
+        // ;
     }
 
     /**
@@ -63,9 +63,9 @@ class UserTableSeeder extends Seeder
         v1_user()->create(
             [
                 UserFields::EMAIL          => 'system@' . $this->domain() . $this->tld(),
-                UserFields::USERNAME       => 'system',
-                UserFields::ACCOUNT_TYPE   => AccountType::System,
-                UserFields::ACCOUNT_STATUS => AccountStatus::Classified,
+                // UserFields::USERNAME       => 'system',
+                // UserFields::ACCOUNT_TYPE   => AccountType::System,
+                // UserFields::ACCOUNT_STATUS => AccountStatus::Classified,
             ],
         );
 
@@ -80,9 +80,9 @@ class UserTableSeeder extends Seeder
         v1_user()->create(
             [
                 UserFields::EMAIL          => 'sudo@' . $this->domain() . $this->tld(),
-                UserFields::USERNAME       => 'sudo',
-                UserFields::ACCOUNT_TYPE   => AccountType::Sudo,
-                UserFields::ACCOUNT_STATUS => AccountStatus::Classified,
+                // UserFields::USERNAME       => 'sudo',
+                // UserFields::ACCOUNT_TYPE   => AccountType::Sudo,
+                // UserFields::ACCOUNT_STATUS => AccountStatus::Classified,
             ],
         );
 
@@ -98,10 +98,10 @@ class UserTableSeeder extends Seeder
             [
                 UserFields::EMAIL              => 'manager@' . $this->domain() . $this->tld(),
                 UserFields::MOBILE             => '09123456789',
-                UserFields::USERNAME           => 'manager',
                 UserFields::PASSWORD           => bcrypt('password'),
-                UserFields::ACCOUNT_TYPE       => AccountType::Manager,
-                UserFields::ACCOUNT_STATUS     => AccountStatus::Free,
+                // UserFields::USERNAME           => 'manager',
+                // UserFields::ACCOUNT_TYPE       => AccountType::Manager,
+                // UserFields::ACCOUNT_STATUS     => AccountStatus::Free,
                 UserFields::MOBILE_VERIFIED_AT => Carbon::now(),
                 UserFields::EMAIL_VERIFIED_AT  => Carbon::now(),
             ],
