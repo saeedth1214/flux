@@ -25,13 +25,11 @@ class ModuleServiceProvider extends BaseServiceProvider
     {
         $modules = $this->app['modules']->allEnabled();
 
-        foreach ($modules as $module)
-        {
+        foreach ($modules as $module) {
             $this->loadTranslations($module);
             $this->loadConfigs($module);
             $this->loadMigrations($module);
         }
-
     }
 
     /**
@@ -41,9 +39,8 @@ class ModuleServiceProvider extends BaseServiceProvider
     {
         $max = config('framework.max_versioned_file');
 
-        for ($version = 1; $version <= $max; $version++)
-        {
-            $translationsPath = "{$module->getPath()}/Lang/V$version";
+        for ($version = 1; $version <= $max; $version++) {
+            $translationsPath = "{$module->getPath()}/Lang/V$version/fa";
             $this->loadTranslationsFrom($translationsPath, "v$version" . '.' . $module->get('alias'));
         }
     }
@@ -56,11 +53,9 @@ class ModuleServiceProvider extends BaseServiceProvider
         $configPath = "{$module->getPath()}/Config/Dependency";
 
         // =====================[DEPENDENCY FREE]======================
-        if (is_dir($configPath))
-        {
+        if (is_dir($configPath)) {
             collect(File::files($configPath))
-                ->each(function ($file) use ($module): void
-                {
+                ->each(function ($file) use ($module): void {
                     $filename     = $file->getFilenameWithoutExtension();
                     $moduleConfig = include $file->getPathname();
 
@@ -69,14 +64,12 @@ class ModuleServiceProvider extends BaseServiceProvider
                     $newConfig = array_merge($currentConfig, $moduleConfig);
 
                     config([$filename => $newConfig]);
-                })
-            ;
+                });
         }
 
         // =====================[VERSION BASED]======================
         $max = config('framework.max_versioned_file');
-        for ($version = 1; $version <= $max; $version++)
-        {
+        for ($version = 1; $version <= $max; $version++) {
             $versionedPath = "{$module->getPath()}/Config/V$version";
 
 
@@ -86,8 +79,7 @@ class ModuleServiceProvider extends BaseServiceProvider
             collect(File::files($versionedPath))
                 ->each(
                     fn($file) => $this->mergeConfigFrom($file->getPathname(), "v$version.{$module->get('alias')}." . $file->getFilenameWithoutExtension())
-                )
-            ;
+                );
         }
     }
 
@@ -98,8 +90,7 @@ class ModuleServiceProvider extends BaseServiceProvider
     {
         $max = config('framework.max_versioned_file');
 
-        for ($version = 1; $version <= $max; $version++)
-        {
+        for ($version = 1; $version <= $max; $version++) {
             $this->loadMigrationsFrom("{$module->getPath()}/Database/Migrations/V$version");
         }
     }

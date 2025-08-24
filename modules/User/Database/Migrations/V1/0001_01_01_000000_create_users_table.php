@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamp(UserFields::EMAIL_VERIFIED_AT)->nullable();
             $table->timestamp(UserFields::MOBILE_VERIFIED_AT)->nullable();
             $table->string(UserFields::PASSWORD);
-            $table->tinyInteger(UserFields::ROLE)->default(Role::Admin->value(0));
+            $table->tinyInteger(UserFields::ROLE)->default(Role::Admin->value);
             $table->timestamps();
         });
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Themes\FluxOne\Livewire\Modules\Auth;
+namespace Themes\Fluxone\Livewire\Modules\Auth;
 
 use Livewire\Component;
 

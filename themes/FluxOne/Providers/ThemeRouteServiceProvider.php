@@ -1,6 +1,6 @@
 <?php
 
-namespace Themes\FluxOne\Providers;
+namespace Themes\Fluxone\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -20,7 +20,7 @@ class ThemeRouteServiceProvider extends ServiceProvider
      */
     private function mapRoutes(): void
     {
-        $base = base_path('themes/FluxOne');
+        $base = base_path('themes/Fluxone');
         $this->mapPublicRoutes("$base/Routes/web.php");
         $this->mapApiRoutes("$base/Routes/api.php");
     }

@@ -39,8 +39,8 @@ class ThemeServiceProvider extends ServiceProvider
      */
     private function syncTheme(): void
     {
-        $this->active = config('v1.theme.config.active', 'FluxOne');
-        $this->parent = config('v1.theme.config.parent', 'FluxOne');
+        $this->active = config('v1.theme.config.active', 'Fluxone');
+        $this->parent = config('v1.theme.config.parent', 'Fluxone');
         Theme::set($this->active, $this->parent);
     }
 
@@ -57,14 +57,12 @@ class ThemeServiceProvider extends ServiceProvider
         $parentProvider = sprintf($provider, $this->parent);
 
         //Register active theme provider
-        if (class_exists($activeProvider))
-        {
+        if (class_exists($activeProvider)) {
             $this->app->register($activeProvider);
         }
 
         //Register parent theme provider
-        if ($this->active !== $this->parent && class_exists($parentProvider))
-        {
+        if ($this->active !== $this->parent && class_exists($parentProvider)) {
             $this->app->register($parentProvider);
         }
     }

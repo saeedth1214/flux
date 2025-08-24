@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev:fluxOne": "cd themes/FluxOne/ && npm i && npm run dev",
-        "production": "cd themes/FluxOne/ && npm i && npm run build"
+        "dev:Fluxone": "cd themes/Fluxone/ && npm i && npm run dev",
+        "production": "cd themes/Fluxone/ && npm i && npm run build"
     }
 }

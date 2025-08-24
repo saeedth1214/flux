@@ -4,14 +4,14 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
-    base: "/FluxOne",
+    base: "/Fluxone",
     plugins: [
         laravel({
             input: [
-                'themes/FluxOne/resources/css/app.css',
-                'themes/FluxOne/resources/js/app.js',
+                'themes/Fluxone/resources/css/app.css',
+                'themes/Fluxone/resources/js/app.js',
             ],
-            buildDirectory: "FluxOne",
+            buildDirectory: "Fluxone",
             publicDirectory: "./../../public"
         }),
         {
@@ -29,7 +29,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'themes/FluxOne/resources/js'),
+            '@': path.resolve(__dirname, 'themes/Fluxone/resources/js'),
             // '@flux': path.resolve(__dirname, '../../../../vendor/livewire/flux/dist')
         }
     },
