@@ -7,13 +7,7 @@
 
     <title>Laravel</title>
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    @vite(
-        [
-            'resources/css/app.css', 
-            'resources/js/app.js'
-        ],
-            'FluxOne'
-            )
+    @vite(['resources/css/app.css', 'resources/js/app.js'], 'Fluxone')
 
     @fluxAppearance
 </head>

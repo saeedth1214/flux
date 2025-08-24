@@ -1,6 +1,6 @@
 <?php
 
-namespace Themes\FluxOne\Providers;
+namespace Themes\Fluxone\Providers;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
@@ -42,17 +42,16 @@ class ThemeServiceProvider extends ServiceProvider
         /**
          * Directory doesn't existS.
          */
-        if (!$filesystem->isDirectory($directory))
-        {
+        if (!$filesystem->isDirectory($directory)) {
             return;
         }
 
         collect($filesystem->allFiles($directory))
             ->map(
                 fn(SplFileInfo $file) => Str::of($namespace)
-                                            ->append("\\{$file->getRelativePathname()}")
-                                            ->replace(['/', '.php'], ['\\', ''])
-                                            ->toString()
+                    ->append("\\{$file->getRelativePathname()}")
+                    ->replace(['/', '.php'], ['\\', ''])
+                    ->toString()
             )
             ->filter(fn($class) => (is_subclass_of($class, Component::class) && !(new ReflectionClass($class))->isAbstract()))
             ->each(fn($class) => $this->registerSingleComponent($class, $namespace, $aliasPrefix))
@@ -65,12 +64,11 @@ class ThemeServiceProvider extends ServiceProvider
     private function registerSingleComponent(string $class, string $namespace, string $aliasPrefix): void
     {
         $alias = $aliasPrefix . Str::of($class)
-                                   ->after($namespace . '\\')
-                                   ->replace(['/', '\\'], '.')
-                                   ->explode('.')
-                                   ->map([Str::class, 'kebab'])
-                                   ->implode('.')
-        ;
+            ->after($namespace . '\\')
+            ->replace(['/', '\\'], '.')
+            ->explode('.')
+            ->map([Str::class, 'kebab'])
+            ->implode('.');
 
         Str::endsWith($class, ['\Index', '\index'])
             ? Livewire::component(Str::beforeLast($alias, '.index'), $class)

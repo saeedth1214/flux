@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Themes\FluxOne\Livewire\Modules\Auth\Login;
-use Themes\FluxOne\Livewire\Modules\Auth\Register;
+use Themes\Fluxone\Livewire\Modules\Auth\Login;
+use Themes\Fluxone\Livewire\Modules\Auth\Register;
 
 Route::prefix('auth/')->group(function ($route) {
     $route->get('login', Login::class);

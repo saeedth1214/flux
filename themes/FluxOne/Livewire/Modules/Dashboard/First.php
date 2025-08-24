@@ -1,6 +1,6 @@
 <?php
 
-namespace Themes\FluxOne\Livewire\Modules\Dashboard;
+namespace Themes\Fluxone\Livewire\Modules\Dashboard;
 
 use Livewire\Component;
 
