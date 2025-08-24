@@ -8,41 +8,41 @@
                 <flux:label>نام</flux:label>
                 <span class="text-sm text-red-600">*</span>
                 <flux:input wire:model.blur='form.firstname' />
-                <flux:error name="first_name" />
+                <flux:error name="form.firstname" />
             </flux:field>
             <flux:field>
                 <flux:label>نام خانوادگی</flux:label>
                 <span class="text-sm text-red-600">*</span>
-                <flux:input required wire:model='form.lastname' />
-                <flux:error name="last_name" />
+                <flux:input required wire:model.blur='form.lastname' />
+                <flux:error name="form.lastname" />
             </flux:field>
             <flux:field>
                 <flux:label>موبایل</flux:label>
                 <span class="text-sm text-red-600">*</span>
-                <flux:input required wire:model='form.mobile' />
-                <flux:error name="mobile" />
+                <flux:input required wire:model.blur='form.mobile' />
+                <flux:error name="form.mobile" />
             </flux:field>
             <flux:field>
                 <flux:label>ایمیل</flux:label>
-                <flux:input wire:model='form.email' />
-                <flux:error name="email" />
+                <flux:input wire:model.blur='form.email' />
+                <flux:error name="form.email" />
             </flux:field>
             <flux:field>
                 <flux:label>رمزعبور</flux:label>
                 <span class="text-sm text-red-600">*</span>
-                <flux:input type="password" placeholder="****" wire:model='form.password' />
-                <flux:error name="password" />
+                <flux:input type="password" placeholder="****" wire:model.blur='form.password' />
+                <flux:error name="form.password" />
             </flux:field>
             <flux:field>
                 <flux:label>تکراررمزعبور</flux:label>
                 <span class="text-sm text-red-600">*</span>
-                <flux:input type="password" placeholder="****" wire:model='form.confirmed_password' />
-                <flux:error name="confirmed_password" />
+                <flux:input type="password" placeholder="****" wire:model.blur='form.password_confirmation' />
+                <flux:error name="form.password_confirmation" />
             </flux:field>
         </div>
         <div class="flex flex-col justify-center gap-4 mt-6">
             <flux:button variant="primary" class="w-full text-white hover:cursor-pointer" color='indigo'
-                wire.click='register'>ثبت نام
+                wire:click='register'>ثبت نام
             </flux:button>
 
             <flux:subheading class="flex justify-center gap-1 text-center">
