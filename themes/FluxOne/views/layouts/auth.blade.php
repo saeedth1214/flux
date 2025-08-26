@@ -13,6 +13,7 @@
 
 <body class="bg-gray-50">
     <div class="flex min-h-screen">
+        @include('partials.flash')  
         {{ $slot }}
     </div>
     @fluxScripts

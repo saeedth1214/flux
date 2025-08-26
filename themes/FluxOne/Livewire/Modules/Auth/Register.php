@@ -2,6 +2,7 @@
 
 namespace Themes\Fluxone\Livewire\Modules\Auth;
 
+use Exception;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Modules\User\Entities\V1\User\User;
@@ -14,10 +15,15 @@ class Register extends Component
 
     public function register()
     {
-        $validatedData = $this->form->validate();
-        $validatedData['password'] = Hash::make($validatedData['password']);
-        User::query()->create($validatedData);
-        return redirect()->route('auth.login');
+        try {
+            $validatedData = $this->form->validate();
+            $validatedData['password'] = Hash::make($validatedData['password']);
+            User::query()->create($validatedData);
+            request()->session()->flash('success', 'ثبت نام با موفقیت انجام شد.');
+            return redirect()->route('auth.login');
+        } catch (Exception $ex) {
+            request()->session()->flash('failed', 'مشکلی در روند ثبت نام شما رخ داده است.');
+        }
     }
 
     public function render()

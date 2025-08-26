@@ -1,14 +1,15 @@
 
     <div class="flex-1 flex justify-center items-center" dir="rtl">
         <div class="flex flex-col justify-center w-120 max-w-120 border border-gray-100 p-10 rounded-xl bg-white">
+            {{-- @include('partials.flash') --}}
             <div class="grif grid-col-1">
                 <h3 class="text-center text-indigo-500 text-xl font-bold p-4">ورود کاربران</h3>
             </div>
             <div class="flex flex-col gap-6">
                 <flux:field>
                     <flux:label>موبایل</flux:label>               
-                    <flux:input required />
-                    <flux:error name="mobile" />
+                    <flux:input required wire:model='mobile'/>
+                    <flux:error name="mobile"/>
                 </flux:field>
                 <flux:field>
                     <div class="mb-3 flex justify-between">
@@ -19,12 +20,18 @@
                             </flux:text>
                         </flux:link>
                     </div>
-                    <flux:input type="password" placeholder="****" />
+                    <flux:input type="password" placeholder="****" wire:model='password' />
+                    <flux:error name="password"/>
                 </flux:field>
 
                 {{-- <flux:checkbox label="Remember me for 30 days" /> --}}
 
-                <flux:button variant="primary" class="w-ful hover:cursor-pointer" color='indigo'>ورود</flux:button>
+                <flux:button 
+                       variant="primary" 
+                       class="w-ful hover:cursor-pointer" 
+                       color='indigo' 
+                       wire:click='login'
+                       >ورود</flux:button>
             </div>
             <div class="flex flex-col mt-3">
                 <flux:subheading class="text-center">
@@ -44,4 +51,4 @@
                 </flux:subheading>
             </div>
         </div>
-    </div>
+    </div

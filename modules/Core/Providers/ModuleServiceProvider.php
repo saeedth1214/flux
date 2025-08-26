@@ -40,7 +40,7 @@ class ModuleServiceProvider extends BaseServiceProvider
         $max = config('framework.max_versioned_file');
 
         for ($version = 1; $version <= $max; $version++) {
-            $translationsPath = "{$module->getPath()}/Lang/V$version/fa";
+            $translationsPath = "{$module->getPath()}/Lang/V$version";
             $this->loadTranslationsFrom($translationsPath, "v$version" . '.' . $module->get('alias'));
         }
     }

@@ -152,7 +152,8 @@ return [
     'attributes' => [
         'mobile' => 'موبایل',
         'email' => 'ایمیل',
-        'token' => 'توکن'
+        'token' => 'توکن',
+        'password' => 'رمز عبور'
     ],
 
 ];
